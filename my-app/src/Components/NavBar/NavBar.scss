@@ -1,0 +1,14 @@
+@import '../../Styles/var';
+
+.navigation-panel {
+  width: 100%;
+  height: fit-content;
+  background: $mainBackgroundColor;
+  color: $mainFontColor;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border-bottom: 1px solid $mainFontColor;
+  margin-bottom: 20px;
+}

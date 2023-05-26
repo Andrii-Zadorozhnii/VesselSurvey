@@ -1,0 +1,9 @@
+@import './../../src/Styles/var';
+
+.input-Component {
+  background: inherit;
+  color: $mainFontColor;
+  padding-left: 10px;
+  width: 80px;
+  text-align: center;
+}

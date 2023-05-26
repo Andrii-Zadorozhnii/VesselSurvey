@@ -1,0 +1,11 @@
+
+.data {
+  display: inline-grid;
+  grid-gap: 5px;
+
+  & p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 0 5px;
+  }
+}
