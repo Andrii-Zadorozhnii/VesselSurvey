@@ -30,7 +30,10 @@ const InitialSection = () => {
     const [InitAftStbdDraft, setInitAftStbdDraft] = useState(0.0);
 
     return (
+        <>
+
         <div className='initial-section'>
+
             <div className='data'>
                 <DraftInput
                     className='InitFwdPortDraft'
@@ -77,6 +80,7 @@ const InitialSection = () => {
                 />
             </div>
         </div>
+        </>
     );
 };
 

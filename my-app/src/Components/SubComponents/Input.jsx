@@ -6,7 +6,7 @@ const Input = ({ value, onChange }) => {
         <input
             type='number'
             className='input-Component'
-            placeholder='Please enter a number'
+            placeholder='Draft'
             value={value}
             onChange={onChange}
             step='0.01'
