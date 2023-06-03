@@ -16,9 +16,11 @@ const DraftInput = ({ className, value, onChange, storageKey }) => {
         localStorage.setItem(storageKey, newValue.toFixed(2));
     };
 
-    return (
-        <Input className={className} value={value} onChange={handleInputChange} />
-    );
+    return <Input className={className} value={value} onChange={handleInputChange} />;
+};
+
+const calculateMeanDraft = (portDraft, stbdDraft) => {
+    return ((portDraft + stbdDraft)/2);
 };
 
 const FinalSection = () => {
@@ -28,6 +30,19 @@ const FinalSection = () => {
     const [FinalFwdStbdDraft, setFinalFwdStbdDraft] = useState(0.0);
     const [FinalMidStbdDraft, setFinalMidStbdDraft] = useState(0.0);
     const [FinalAftStbdDraft, setFinalAftStbdDraft] = useState(0.0);
+
+    const meanFinalFwdDraft = calculateMeanDraft(FinalFwdPortDraft, FinalFwdStbdDraft);
+    const meanFinalMidDraft = calculateMeanDraft(FinalMidPortDraft, FinalMidStbdDraft);
+    const meanFinalAftDraft = calculateMeanDraft(FinalAftPortDraft, FinalAftStbdDraft);
+
+    useEffect(() => {
+        localStorage.setItem('meanFinalFwdDraft', meanFinalFwdDraft.toFixed(2));
+        localStorage.setItem('meanFinalMidDraft', meanFinalMidDraft.toFixed(2));
+        localStorage.setItem('meanFinalAftDraft', meanFinalAftDraft.toFixed(2));
+        console.log('meanFinalFwdDraft:', meanFinalFwdDraft.toFixed(2));
+        console.log('meanFinalMidDraft:', meanFinalMidDraft.toFixed(2));
+        console.log('meanFinalAftDraft:', meanFinalAftDraft.toFixed(2));
+    }, [meanFinalFwdDraft, meanFinalMidDraft, meanFinalAftDraft]);
 
     return (
         <div className='initial-section'>
