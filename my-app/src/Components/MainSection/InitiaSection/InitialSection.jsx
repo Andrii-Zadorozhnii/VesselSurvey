@@ -23,6 +23,9 @@ const DraftInput = ({className, value, onChange, storageKey}) => {
 const calculateMeanDraft = (portDraft, stbdDraft) => {
     return (portDraft + stbdDraft) / 2;
 };
+const calculteCorrDraft = (tbm, lbm, correction) =>{
+    return (tbm/lbm*correction);
+}
 
 const InitialSection = () => {
     const [InitFwdPortDraft, setInitFwdPortDraft] = useState(0.0);
